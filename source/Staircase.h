@@ -3,6 +3,7 @@
 #define __OIL__
 
 #include <iostream>
+#include <inttypes.h>
 
 /**
  * Solves the CodeForces 168B: Burnining Midnight Oil Problem.
@@ -19,5 +20,5 @@ void staircase_solve(std::istream& in, std::ostream& out);
  * @param k 2 <= k <= 10
  * @return minumum allwable value v
  */
-unsigned long long calc_staircase(int boxWidth, int boxHeight, unsigned long long prevBoxHeight, int* stairs, int sumStairs);
+int64_t calc_staircase(int boxWidth, int boxHeight, int64_t prevBoxHeight, int* stairs, int sumStairs);
 #endif

@@ -1,21 +1,18 @@
 #include <iostream>
 #include <sstream>
-#include <vector>
 #include <string>
-#include <unordered_map>
-#include <utility>
 
 #include "gtest/gtest.h"
 
-#include "prints.h"
 #include "Staircase.h"
+#include <inttypes.h>
 
 
 TEST(Staircase, calc_staircase){
    int stairs[] = {1, 2, 3, 6, 6};
    int boxWidth = 1;
    int boxHeight = 1;
-   int prevBoxHeight = 0;
+   int64_t prevBoxHeight = 0;
    int bottom = calc_staircase(boxWidth, boxHeight, prevBoxHeight, stairs, 5);
    ASSERT_EQ(1, bottom);
 
@@ -42,7 +39,7 @@ TEST(Staircase, calc_staircase_2){
    int stairs[] = {1, 2, 3};
    int boxWidth = 1;
    int boxHeight = 1;
-   int prevBoxHeight = 0;
+   int64_t prevBoxHeight = 0;
    int bottom = calc_staircase(boxWidth, boxHeight, prevBoxHeight, stairs, 3);
    ASSERT_EQ(1, bottom);
 
@@ -57,7 +54,7 @@ TEST(Staircase, calc_staircase_3){
    int stairs[] = {1};
    int boxWidth = 1;
    int boxHeight = 2;
-   int prevBoxHeight = 0;
+   int64_t prevBoxHeight = 0;
    int bottom = calc_staircase(boxWidth, boxHeight, prevBoxHeight, stairs, 1);
    ASSERT_EQ(1, bottom);
 
@@ -114,7 +111,7 @@ TEST(Staircase, staircase_solve_2){
    std::stringstream w;
    staircase_solve(r, w);
    std::stringstream expected;
-   unsigned long long num = 1000000000;
+   int64_t num = 1000000000;
    for(int i = 0; i < 40; ++i){
       expected << num << std::endl;
       num += 1000000000;

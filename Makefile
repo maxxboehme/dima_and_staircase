@@ -15,7 +15,7 @@ main: $(SRC_DIR)/Staircase.h $(SRC_DIR)/Staircase.cpp $(SRC_DIR)/main.cpp
 	g++ -pedantic -std=c++11 -Wall $(filter %.cpp, $^) -o main
 
 test: $(SRC_DIR)/Staircase.h $(SRC_DIR)/Staircase.cpp $(SRC_DIR)/UnitTests.cpp
-	g++ -pedantic -std=c++11 -Wall $(filter %.cpp, $^) -o test -lgtest -lgtest_main -lpthread
+	g++ -pedantic -Wall $(filter %.cpp, $^) -o test -lgtest -lgtest_main -lpthread
 
 judge: $(SRC_DIR)/main.cpp $(SRC_DIR)/Staircase.cpp
 	@mkdir -p judge
